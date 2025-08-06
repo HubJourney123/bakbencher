@@ -13,6 +13,7 @@ export default function NavigationHeader() {
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+      setSearchQuery(''); // Clear the search input after searching
     }
   };
 
