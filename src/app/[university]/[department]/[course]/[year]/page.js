@@ -13,9 +13,9 @@ export default async function QuestionsPage({ params, searchParams }) {
     department: departmentSlug, 
     course: courseSlug,
     year 
-  } = params;
+  } = await params;
   
-  const examType = searchParams.type; // Optional filter by exam type
+  const { type: examType } = await searchParams; // Await searchParams too
 
   // Fetch course with full hierarchy
   const course = await prisma.course.findFirst({

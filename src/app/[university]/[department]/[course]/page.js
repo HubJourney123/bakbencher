@@ -58,7 +58,7 @@ const YearCard = ({ year, examTypes, universitySlug, departmentSlug, courseSlug 
 };
 
 export default async function YearSelectionPage({ params }) {
-  const { university: universitySlug, department: departmentSlug, course: courseSlug } = params;
+  const { university: universitySlug, department: departmentSlug, course: courseSlug } = await params;
   
   // Fetch course with department and university info
   const course = await prisma.course.findFirst({

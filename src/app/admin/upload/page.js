@@ -5,7 +5,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export default async function UploadPage({ searchParams }) {
-  const courseId = searchParams.courseId;
+  const { courseId } = await searchParams;
 
   // Get all universities with departments and courses
   const universities = await prisma.university.findMany({

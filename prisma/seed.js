@@ -17,6 +17,7 @@ async function main() {
             { name: "Computer Science & Engineering", slug: "cse" },
             { name: "Electrical & Electronic Engineering", slug: "eee" },
             { name: "Electronics & Communication Engineering", slug: "ece" },
+            { name: "Energy Science & Engineering", slug: "ese" },
             { name: "Civil Engineering", slug: "ce" },
             { name: "Mechanical Engineering", slug: "me" },
             { name: "Industrial Engineering & Management", slug: "iem" },
@@ -28,6 +29,7 @@ async function main() {
             { name: "Mathematics", slug: "math" },
             { name: "Chemistry", slug: "chem" },
             { name: "Physics", slug: "phy" },
+            { name: "Chemical Engineering", slug: "che" },
           ]
         }
       }

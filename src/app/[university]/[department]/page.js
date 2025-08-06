@@ -63,7 +63,7 @@ const CourseCard = ({ course, universitySlug, departmentSlug }) => {
 };
 
 export default async function CoursesPage({ params }) {
-  const { university: universitySlug, department: departmentSlug } = params;
+  const { university: universitySlug, department: departmentSlug } = await params;
   
   // Fetch department with university info
   const department = await prisma.department.findFirst({
