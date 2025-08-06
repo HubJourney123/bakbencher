@@ -24,3 +24,200 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* src/app/globals.css */
+/* Add these print styles to your existing globals.css */
+
+@media print {
+  /* General print styles */
+  * {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Hide elements on print */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Page breaks */
+  .print\:break-before-page {
+    page-break-before: always;
+  }
+
+  .question-container {
+    page-break-inside: avoid;
+  }
+
+  /* Headers and footers */
+  @page {
+    margin: 2cm;
+    
+    @top-center {
+      content: "Question Paper";
+    }
+    
+    @bottom-center {
+      content: counter(page);
+    }
+  }
+
+  /* Ensure backgrounds print */
+  .bg-gray-50 {
+    background-color: #f9fafb !important;
+  }
+
+  .bg-green-50 {
+    background-color: #f0fdf4 !important;
+  }
+
+  .bg-blue-100 {
+    background-color: #dbeafe !important;
+  }
+
+  .bg-green-100 {
+    background-color: #dcfce7 !important;
+  }
+
+  /* Code blocks */
+  pre {
+    border: 1px solid #e5e7eb;
+    page-break-inside: avoid;
+  }
+
+  /* Tables */
+  table {
+    page-break-inside: avoid;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Math equations */
+  .katex-display {
+    page-break-inside: avoid;
+  }
+
+  /* Remove shadows and unnecessary borders */
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl {
+    box-shadow: none !important;
+  }
+
+  /* Adjust margins and paddings */
+  .p-6 {
+    padding: 1rem !important;
+  }
+
+  .py-8 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Ensure proper spacing between questions */
+  .space-y-8 > * + * {
+    margin-top: 2rem !important;
+  }
+
+  /* Header styling for print */
+  header {
+    border-bottom: 2px solid #000 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Question number emphasis */
+  h3 {
+    font-weight: bold !important;
+  }
+
+  /* Answer section */
+  .bg-green-50 {
+    border: 1px solid #86efac !important;
+  }
+}
+/* Add these to your existing src/app/globals.css file */
+
+/* Print-specific styles */
+@media print {
+  /* General print settings */
+  * {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Hide elements on print using Tailwind's print: modifier */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Page breaks */
+  .print\:break-before-page {
+    page-break-before: always;
+  }
+
+  .question-container {
+    page-break-inside: avoid;
+  }
+
+  header {
+    page-break-after: avoid;
+  }
+
+  /* Ensure backgrounds print */
+  .bg-gray-50,
+  .bg-green-50,
+  .bg-blue-100,
+  .bg-green-100 {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Remove shadows */
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl {
+    box-shadow: none !important;
+  }
+
+  /* Code blocks */
+  pre {
+    border: 1px solid #e5e7eb;
+    page-break-inside: avoid;
+  }
+
+  /* Tables and images */
+  table,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* Math equations */
+  .katex-display {
+    page-break-inside: avoid;
+  }
+
+  /* Adjust spacing for print */
+  .space-y-8 > * + * {
+    margin-top: 2rem !important;
+  }
+
+  /* Question styling for print */
+  .bg-white {
+    border: 1px solid #e5e7eb !important;
+  }
+}

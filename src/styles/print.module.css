@@ -1,0 +1,63 @@
+/* src/styles/print.module.css */
+
+/* Print-specific styles */
+@media print {
+  /* General print settings */
+  * {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Hide elements on print */
+  .printHidden {
+    display: none !important;
+  }
+
+  /* Page breaks */
+  .breakBeforePage {
+    page-break-before: always;
+  }
+
+  .questionContainer {
+    page-break-inside: avoid;
+  }
+
+  header {
+    page-break-after: avoid;
+  }
+
+  /* Ensure backgrounds print */
+  .bg-gray-50 {
+    background-color: #f9fafb !important;
+  }
+
+  .bg-green-50 {
+    background-color: #f0fdf4 !important;
+  }
+
+  /* Remove shadows */
+  [class*="shadow"] {
+    box-shadow: none !important;
+  }
+
+  /* Code blocks */
+  pre {
+    border: 1px solid #e5e7eb;
+    page-break-inside: avoid;
+  }
+
+  /* Tables and images */
+  table, img {
+    page-break-inside: avoid;
+  }
+
+  /* Math equations */
+  .katex-display {
+    page-break-inside: avoid;
+  }
+}

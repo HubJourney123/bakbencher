@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model University {
+  id          String       @id @default(uuid())
+  name        String
+  slug        String       @unique
+  departments Department[]
+  createdAt   DateTime     @default(now())
+  
+  @@index([slug])
+}
+
+model Department {
+  id           String     @id @default(uuid())
+  name         String
+  slug         String
+  universityId String
+  university   University @relation(fields: [universityId], references: [id], onDelete: Cascade)
+  courses      Course[]
+  createdAt    DateTime   @default(now())
+  
+  @@unique([universityId, slug])
+  @@index([universityId])
+}
+
+model Course {
+  id           String     @id @default(uuid())
+  name         String
+  code         String     // e.g., "CS101", "MATH201"
+  slug         String
+  departmentId String
+  department   Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  questions    Question[]
+  createdAt    DateTime   @default(now())
+  
+  @@unique([departmentId, code])
+  @@index([departmentId])
+}
+
+model Question {
+  id           String     @id @default(uuid())
+  year         Int
+  examType     String     // "mid", "final", "quiz", etc.
+  questionNo   Int?       // Question number in the exam
+  content      String     @db.Text  // Question content (markdown with equations, code blocks)
+  marks        Int?       // Marks for this question
+  courseId     String
+  course       Course     @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  answer       Answer?    // One answer per question
+  createdAt    DateTime   @default(now())
+  
+  @@index([courseId, year])
+}
+
+model Answer {
+  id           String     @id @default(uuid())
+  content      String     @db.Text  // Answer content (markdown with equations, code blocks)
+  source       String?    // Source citation (e.g., "Cormen et al., Introduction to Algorithms, 3rd Edition, p.245")
+  contributor  String?    // Contributor name (e.g., "John Doe, CSE Batch 2019")
+  questionId   String     @unique
+  question     Question   @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  
+  @@index([questionId])
+}
