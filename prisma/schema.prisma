@@ -1,14 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-
-
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -46,6 +38,8 @@ model Course {
   name         String
   code         String     // e.g., "CS101", "MATH201"
   slug         String
+  credits      Float?     // Number of credits (optional)
+  semester     Int?       // Semester number (optional)
   departmentId String
   department   Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
   questions    Question[]

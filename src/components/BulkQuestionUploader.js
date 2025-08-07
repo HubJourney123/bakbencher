@@ -161,7 +161,7 @@ export default function BulkQuestionUploader({ universities, selectedCourse }) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow p-6">
+    <div className="bg-slate-50 rounded-lg shadow-lg p-6">
       {/* Course Selection */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div>

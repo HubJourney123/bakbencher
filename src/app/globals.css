@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -221,3 +223,24 @@ body {
     border: 1px solid #e5e7eb !important;
   }
 }
+
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient 6s ease infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+

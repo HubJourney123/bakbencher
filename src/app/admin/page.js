@@ -79,12 +79,15 @@ export default async function AdminDashboard() {
       {/* Quick Actions */}
       <div className="bg-white rounded-lg shadow p-6 mb-8">
         <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
-        <div className="flex space-x-4">
+        <div className="flex flex-wrap gap-4">
           <Link href="/admin/upload" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
             Upload Questions
           </Link>
           <Link href="/admin/manage" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-            Manage Questions
+            Manage Structure
+          </Link>
+          <Link href="/admin/upload/simple" className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">
+            Bulk Upload
           </Link>
         </div>
       </div>
