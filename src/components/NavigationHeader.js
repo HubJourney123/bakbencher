@@ -36,7 +36,7 @@ export default function NavigationHeader() {
 
   return (
     <>
-      <header className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 shadow-2xl border-b border-purple-800/30 sticky top-0 z-50 backdrop-blur-lg">
+      <header className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 shadow-2xl border-b border-purple-800/30 sticky top-0 z-50 backdrop-blur-lg">
         <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
         
         {/* Main Navigation Bar */}
