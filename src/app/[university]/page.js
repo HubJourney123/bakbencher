@@ -45,13 +45,13 @@ const DepartmentCard = ({ department, universitySlug }) => {
 
   return (
     <Link href={`/${universitySlug}/${department.slug}`}>
-      <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 cursor-pointer group">
+      <div className="bg-slate-800 border-2 border-blue-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 cursor-pointer group">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
+            <h3 className="text-xl font-semibold text-gray-200 group-hover:text-blue-600 transition-colors">
               {getShortForm(department.name)}
             </h3>
-            <p className="text-sm text-gray-600 mt-1">
+            <p className="text-sm text-gray-400 mt-1">
               {department.name}
             </p>
           </div>
@@ -87,24 +87,24 @@ export default async function DepartmentPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-900 text-white">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-slate-800 shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <div className="py-4 text-sm">
-            <nav className="flex items-center space-x-2 text-gray-500">
-              <Link href="/" className="hover:text-gray-700">Home</Link>
+            <nav className="flex items-center space-x-2 text-gray-200">
+              <Link href="/" className="hover:text-gray-300">Home</Link>
               <span>/</span>
-              <span className="text-gray-700 font-medium">{university.name}</span>
+              <span className="text-gray-300 font-medium">{university.name}</span>
             </nav>
           </div>
           
           <div className="pb-6">
-            <h1 className="text-3xl font-bold text-gray-900">
+            <h1 className="text-3xl font-bold text-gray-300">
               {university.name}
             </h1>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-gray-300">
               Select a department to view question papers
             </p>
           </div>
