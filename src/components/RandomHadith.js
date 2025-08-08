@@ -33,7 +33,7 @@ export default function RandomHadith() {
   if (!currentHadith) return null;
 
   return (
-    <div className="relative bg-gradient-to-r from-purple-900/50 via-indigo-900/50 to-purple-900/50 backdrop-blur-sm border-t border-b border-purple-500/20">
+    <div className="relative bg-gradient-to-r from-slate-900 via-slate-900 to-slate-900 backdrop-blur-sm">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-black/10"></div>
       
@@ -71,11 +71,11 @@ export default function RandomHadith() {
           {/* Hadith content */}
           <div className="space-y-4">
             {/* Arabic text (optional - you can remove this if not needed) */}
-            {currentHadith.arabic && (
-              <p className="text-right text-lg sm:text-xl text-purple-200/70 leading-relaxed font-arabic" dir="rtl">
-                {currentHadith.arabic}
-              </p>
-            )}
+            {/*{currentHadith.arabic && (
+              //<p className="text-right text-lg sm:text-xl text-purple-200/70 leading-relaxed font-arabic" dir="rtl">
+                //{currentHadith.arabic}
+              //</p>
+            //)}
 
             {/* Bangla translation */}
             <div className="relative">
@@ -111,8 +111,8 @@ export default function RandomHadith() {
         </div>
       </div>
 
-      {/* Decorative gradient lines */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+      {/* Decorative gradient lines 
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>*/}
     </div>
   );
 }

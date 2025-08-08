@@ -52,17 +52,17 @@ export default async function HomePage() {
 
         <div className="relative">
           {/* Compact header content */}
-          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-10">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-4">
             <div className="text-center">
-              {/* Main heading only */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-red-500">
+              {/* Main heading only 
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-red-700">
                 bakbencher.com
-              </h1>
+              </h1>*/}
               
-              {/* Simplified description */}
+              {/* Simplified description 
               <p className="mt-4 text-base sm:text-lg text-purple-200/70 max-w-2xl mx-auto">
                 Previous year questions and solutions from top universities
-              </p>
+              </p>*/}
             </div>
           </div>
 
@@ -79,9 +79,9 @@ export default async function HomePage() {
             <h2 className="text-2xl sm:text-3xl font-bold text-purple-300 mb-2">
               Select Your University
             </h2>
-            <p className="text-purple-400/60 text-sm sm:text-base">
+            {/*<p className="text-purple-400/60 text-sm sm:text-base">
               Choose from Bangladesh's premier educational institutions
-            </p>
+            </p>*/}
           </div>
 
           {universities.length === 0 ? (
