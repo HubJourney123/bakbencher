@@ -33,7 +33,7 @@ export default function RandomHadith() {
   if (!currentHadith) return null;
 
   return (
-    <div className="relative bg-gradient-to-r from-purple-900/50 via-indigo-900/50 to-purple-900/50 backdrop-blur-sm border-t border-b border-purple-500/20">
+    <div className="relative bg-gradient-to-r from-slate-900/50 via-indigo-900/50 to-slate-900/50 backdrop-blur-sm border-t border-b border-blue-800">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-black/10"></div>
       
