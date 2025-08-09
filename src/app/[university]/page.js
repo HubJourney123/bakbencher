@@ -45,7 +45,7 @@ const DepartmentCard = ({ department, universitySlug }) => {
 
   return (
     <Link href={`/${universitySlug}/${department.slug}`}>
-      <div className="bg-slate-800 border-1 border-purple-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 cursor-pointer group">
+      <div className="bg-slate-800 border-1 border-purple-900 rounded-lg shadow-md hover:border-purple-400/40 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 p-6 cursor-pointer group">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-xl font-semibold text-gray-200 group-hover:text-blue-600 transition-colors">
