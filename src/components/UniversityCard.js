@@ -7,7 +7,7 @@ const UniversityCard = ({ university }) => {
       <div className="
         relative overflow-hidden rounded-xl cursor-pointer
         bg-slate-800
-        border-2 border-blue-900
+        border-1.5 border-purple-900
         transition-all duration-300 ease-out
         hover:scale-105 hover:shadow-2xl
         group
